@@ -97,6 +97,13 @@ header {
     background-color: $darkgray;
     margin-bottom: 40px;
 
+    img {
+        max-width: 400px;
+        max-height: 400px;
+        height: auto;
+        display: block;
+    }
+
     .post-heading {
         display: inline;
         position: relative;
@@ -116,11 +123,24 @@ header {
     .post-content {
         margin-top: -18px;
         padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .highlight pre {
-        overflow: auto;
+
+
+    .highlight {
+        background-color: black;
+        padding: 5px;
+        color: white;
+        margin: 5px;
+
+        pre {
+            overflow: auto;
+            margin: 0;
+        }
     }
+
+
 
     .post-footer {
         border-top: solid 1px $lightgray;

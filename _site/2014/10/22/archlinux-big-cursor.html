@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>P1</title>
+    <title>Archlinux - Big Cursor</title>
 
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/syntax.css">
@@ -38,18 +38,32 @@
 
 <div class="post">
     <h1 class="post-heading">
-        <a href=/2015/09/24/Post-1.html>P1</a>
+        <a href=/2014/10/22/archlinux-big-cursor.html>Archlinux - Big Cursor</a>
     </h1>
-    <div class="post-content"><p>#Post 1<br />
-This is post 1. It is awesome. And I dont know what to write about this.</p>
+    <div class="post-content"><p>After the last archlinux update, my cursor was about 3 to 4 times bigger than normal. First it only occurred in skype, but after a reboot it affected the cursor everywhere.</p>
+
+<p>After searching a bit I found <a href="https://bbs.archlinux.org/viewtopic.php?pid=1467825">this</a> post in the Arch Linux forum. The most practical answer is to comment out the Inherits=Adwaita, which is set through new dependencies:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>nano /usr/share/icons/default/index.theme
+
+<span class="o">[</span>Icon Theme<span class="o">]</span>
+<span class="c">#Inherits=Adwaita</span></code></pre></div>
+
+<p>Then restart X and your cursor should be normal again. The problem only occurs, when no other theme is set, so it’s likely that only users with basic/uncommon display environments are affected (like in my case xmonad).</p>
 </div>
         <div class="post-footer">
         	<span class="date">
-        		<i class="fa fa-clock-o"></i> 24/09/2015
+        		<i class="fa fa-clock-o"></i> 22/10/2014
         	</span>
-            <span class="comments"><a href=/2015/09/24/Post-1.html#disqus_thread>0 Comments</a></span>
+            <span class="comments"><a href=/2014/10/22/archlinux-big-cursor.html#disqus_thread>0 Comments</a></span>
         	<span class="tags">
                 <i class="fa fa-tags"></i>
+            	
+            		<a class="tag" href="/tags.html#linux">linux</a>
+            	
+            		<a class="tag" href="/tags.html#xmonad">xmonad</a>
+            	
+            		<a class="tag" href="/tags.html#archlinux">archlinux</a>
             	
         	</span>
         </div>
@@ -63,7 +77,7 @@ This is post 1. It is awesome. And I dont know what to write about this.</p>
                 /* * * CONFIGURATION VARIABLES * * */
                 // Required: on line below, replace text in quotes with your forum shortname
                 var disqus_shortname = 'loopylab';
-                var disqus_identifier= '/2015/09/24/Post-1';
+                var disqus_identifier= '/2014/10/22/archlinux-big-cursor';
                 
                 /* * * DON'T EDIT BELOW THIS LINE * * */
                 (function() {

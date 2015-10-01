@@ -1,6 +1,7 @@
 ---
 title: Impressum und Datenschutzerklärung
 layout: page
+sitemap: false
 ---
 
 ## Impressum

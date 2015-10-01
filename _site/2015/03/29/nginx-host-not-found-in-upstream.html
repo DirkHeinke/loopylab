@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>P3</title>
+    <title>NGINX "host not found in upstream"</title>
 
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/syntax.css">
@@ -38,17 +38,34 @@
 
 <div class="post">
     <h1 class="post-heading">
-        <a href=/2015/09/25/Post-3.html>P3</a>
+        <a href=/2015/03/29/nginx-host-not-found-in-upstream.html>NGINX "host not found in upstream"</a>
     </h1>
-    <div class="post-content"><p>What? Another one? C’mon!</p>
+    <div class="post-content"><p>If you find lines like this in your nginx error.log and your nginx is not starting on a reboot, you might have a DNS/network problem:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">2015/03/29 11:17:50 <span class="o">[</span>emerg<span class="o">]</span> 1482#0: host not found in upstream <span class="s2">&quot;xxxx.io&quot;</span> in /etc/nginx/sites-enabled/xxxx:12
+2015/03/29 11:17:50 <span class="o">[</span>emerg<span class="o">]</span> 1483#0: host not found in upstream <span class="s2">&quot;xxxx.io&quot;</span> in /etc/nginx/sites-enabled/xxxx:12
+2015/03/29 11:17:51 <span class="o">[</span>emerg<span class="o">]</span> 1504#0: host not found in upstream <span class="s2">&quot;xxxx.io&quot;</span> in /etc/nginx/sites-enabled/xxxx:12</code></pre></div>
+
+<p>Nginx with default values is started, before the network in completely up. My quickfix is to restart nginx after the network is available:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>cat /etc/network/if-up.d/nginx
+<span class="c">#!/bin/sh</span>
+ 
+/etc/init.d/nginx restart</code></pre></div>
 </div>
         <div class="post-footer">
         	<span class="date">
-        		<i class="fa fa-clock-o"></i> 25/09/2015
+        		<i class="fa fa-clock-o"></i> 29/03/2015
         	</span>
-            <span class="comments"><a href=/2015/09/25/Post-3.html#disqus_thread>0 Comments</a></span>
+            <span class="comments"><a href=/2015/03/29/nginx-host-not-found-in-upstream.html#disqus_thread>0 Comments</a></span>
         	<span class="tags">
                 <i class="fa fa-tags"></i>
+            	
+            		<a class="tag" href="/tags.html#nginx">nginx</a>
+            	
+            		<a class="tag" href="/tags.html#linux">linux</a>
+            	
+            		<a class="tag" href="/tags.html#network">network</a>
             	
         	</span>
         </div>
@@ -62,7 +79,7 @@
                 /* * * CONFIGURATION VARIABLES * * */
                 // Required: on line below, replace text in quotes with your forum shortname
                 var disqus_shortname = 'loopylab';
-                var disqus_identifier= '/2015/09/25/Post-3';
+                var disqus_identifier= '/2015/03/29/nginx-host-not-found-in-upstream';
                 
                 /* * * DON'T EDIT BELOW THIS LINE * * */
                 (function() {

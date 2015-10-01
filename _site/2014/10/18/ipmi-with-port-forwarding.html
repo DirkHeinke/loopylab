@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>P3</title>
+    <title>IPMI with port forwarding</title>
 
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/syntax.css">
@@ -38,17 +38,38 @@
 
 <div class="post">
     <h1 class="post-heading">
-        <a href=/2015/09/25/Post-3%20(3rd%20copy).html>P3</a>
+        <a href=/2014/10/18/ipmi-with-port-forwarding.html>IPMI with port forwarding</a>
     </h1>
-    <div class="post-content"><p>What? Another one? C’mon!</p>
+    <div class="post-content"><p>I recently had the problem, that the IPMI virtual console was not working on one of my servers.</p>
+
+<p>After searching the problem in icedtea I discovered errors while downloading files:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">...
+JAR https://localhost:443/liblinux_x86_64.jar not found. Continuing.
+...
+JAR https://localhost:443/iKVM.jar not found. Continuing.
+...</code></pre></div>
+
+<p>I missed that the console works on other ports than 80 and that was the only forwarded port. So I changed my ssh command line to forward all IPMI ports:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo ssh -L 80:192.168.205.115:80 -L 443:192.168.205.115:443 <span class="se">\</span>
+  -L 623:192.168.205.115:623 -L 5900:192.168.205.115:5900 root@example.com</code></pre></div>
 </div>
         <div class="post-footer">
         	<span class="date">
-        		<i class="fa fa-clock-o"></i> 25/09/2015
+        		<i class="fa fa-clock-o"></i> 18/10/2014
         	</span>
-            <span class="comments"><a href=/2015/09/25/Post-3%20(3rd%20copy).html#disqus_thread>0 Comments</a></span>
+            <span class="comments"><a href=/2014/10/18/ipmi-with-port-forwarding.html#disqus_thread>0 Comments</a></span>
         	<span class="tags">
                 <i class="fa fa-tags"></i>
+            	
+            		<a class="tag" href="/tags.html#linux">linux</a>
+            	
+            		<a class="tag" href="/tags.html#network">network</a>
+            	
+            		<a class="tag" href="/tags.html#ssh">ssh</a>
+            	
+            		<a class="tag" href="/tags.html#ipmi">ipmi</a>
             	
         	</span>
         </div>
@@ -62,7 +83,7 @@
                 /* * * CONFIGURATION VARIABLES * * */
                 // Required: on line below, replace text in quotes with your forum shortname
                 var disqus_shortname = 'loopylab';
-                var disqus_identifier= '/2015/09/25/Post-3 (3rd copy)';
+                var disqus_identifier= '/2014/10/18/ipmi-with-port-forwarding';
                 
                 /* * * DON'T EDIT BELOW THIS LINE * * */
                 (function() {

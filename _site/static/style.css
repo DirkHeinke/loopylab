@@ -59,6 +59,11 @@ header {
   border: 1px solid #D1D1D1;
   background-color: #F5F5F5;
   margin-bottom: 40px; }
+  .post img {
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    display: block; }
   .post .post-heading {
     display: inline;
     position: relative;
@@ -73,9 +78,16 @@ header {
       text-decoration: none; }
   .post .post-content {
     margin-top: -18px;
-    padding-left: 10px; }
-  .post .highlight pre {
-    overflow: auto; }
+    padding-left: 10px;
+    padding-right: 10px; }
+  .post .highlight {
+    background-color: black;
+    padding: 5px;
+    color: white;
+    margin: 5px; }
+    .post .highlight pre {
+      overflow: auto;
+      margin: 0; }
   .post .post-footer {
     border-top: solid 1px #D1D1D1;
     display: flex;

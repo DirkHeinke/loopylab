@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/2015/09/19/ansible-docker-error.html</loc>
+    <lastmod>2015-09-19T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>/2015/03/29/nginx-host-not-found-in-upstream.html</loc>
+    <lastmod>2015-03-29T00:00:00+01:00</lastmod>
+  </url>
+  <url>
+    <loc>/2014/10/22/archlinux-big-cursor.html</loc>
+    <lastmod>2014-10-22T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>/2014/10/18/ipmi-with-port-forwarding.html</loc>
+    <lastmod>2014-10-18T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>/2014/09/27/led-wall-light.html</loc>
+    <lastmod>2014-09-27T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>/2014/09/09/ipv6-sixxs.html</loc>
+    <lastmod>2014-09-09T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>/about.html</loc>
+  </url>
+  <url>
+    <loc>/archive.html</loc>
+  </url>
+  <url>
+    <loc>/</loc>
+  </url>
+  <url>
+    <loc>/projects.html</loc>
+  </url>
+  <url>
+    <loc>/tags.html</loc>
+  </url>
+</urlset>

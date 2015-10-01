@@ -4,11 +4,11 @@ title: Projects
 ---
 
 ## Web
-* Insel Matera (V2)
-* overlayr.net - Twitch overlay
-* DevWars
-* podcatcher.de
-* cloudguidance
+* [Insel Matera](http://insel-matera.de/) (V2)
+* [overlayr](http://overlayr.net/) - Twitch overlay
+* [DevWars](http://devwars.tv/)
+* [podcatcher.de](http://podcatcher.de/) - An online podcatcher
+* [c]loudguidance](https://cloudguidance.wordpress.com/) - A blog with cloud tutorials
 
 ## DIY
-* LED Wall Light
+* [LED Wall Light](/2014/09/27/led-wall-light.html)

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>Ansible Docker - Docker API Error</title>
+    <title>LED Wall Light</title>
 
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/syntax.css">
@@ -38,35 +38,59 @@
 
 <div class="post">
     <h1 class="post-heading">
-        <a href=/2015/09/25/ansible-docker-error.html>Ansible Docker - Docker API Error</a>
+        <a href=/2014/09/27/led-wall-light.html>LED Wall Light</a>
     </h1>
-    <div class="post-content"><p>If you try to run a playbook with the ansible-docker plugin, and you get an error like this</p>
+    <div class="post-content"><p>Here is a LED light I built a few months ago.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> failed: <span class="o">[</span>192.168.2.xxx<span class="o">]</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;changed&quot;</span>: <span class="nb">false</span>, <span class="s2">&quot;failed&quot;</span>: <span class="nb">true</span><span class="o">}</span>
-<span class="lineno">2</span> msg: Docker API Error: client and server don<span class="err">&#39;</span>t have same version <span class="o">(</span>client : 1.19, server: 1.18<span class="o">)</span>
-<span class="lineno">3</span> 
-<span class="lineno">4</span> FATAL: all hosts have already failed -- aborting</code></pre></div>
+<p><img src="/assets/2014-09-27/full_light.jpg" alt="" /></p>
 
-<h1 id="solution">Solution</h1>
+<p>It’s built of plywood, some wallpaper and a few LED strips.</p>
 
-<p>You can set the api version to a fixed version. The better way is to use the “auto” feature from docker-py:</p>
+<p><img src="/assets/2014-09-27/colors.jpg" alt="" /></p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="lineno">1</span> <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">start ....</span>
-<span class="lineno">2</span>     <span class="l-Scalar-Plain">docker</span><span class="p-Indicator">:</span>
-<span class="lineno">3</span>       <span class="l-Scalar-Plain">docker_api_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">auto</span>
-<span class="lineno">4</span>       <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">....</span></code></pre></div>
+<h2 id="preparation">Preparation</h2>
+
+<p>I searched a nice figure I want to cut. On wikipedia I found a <a href="http://en.wikipedia.org/wiki/Triskelion#mediaviewer/File:Triskele-Symbol1.svg">triskele</a> as svg so it could be easily resized and printed.</p>
+
+<p>For printing I couldn’t find a program for printing images on DIN A4 paper for linux, so I used <a href="http://sur.ly/o/gdsoftware.dk/More.aspx%3Fid%3D3/AA001290">Easy Poster Printer</a> for Windows.</p>
+
+<p>Then I glued the paper on the wood and used a pin to stick through the paper and mark the form in the wood.</p>
+
+<p>To cut the wood I used a fretsaw to be more accurate than with a jigsaw and sandpaper for rounding.</p>
+
+<h2 id="decoration">Decoration</h2>
+
+<p>Then the wallpaper is glued to the wood and the paper flaps are wrapped around the edges to prevent it from separating.</p>
+
+<p><img src="/assets/2014-09-27/ledmount.jpg" alt="" /></p>
+
+<h2 id="wallmount">Wallmount</h2>
+
+<p>To mount the light on the wall I planned to use two metal hooks, but the distance to the wall was a bit too far. So I used a perforated foundation tie and bend it, so that it holds the metal bracket.</p>
+
+<p><img src="/assets/2014-09-27/hook.jpg" alt="" /></p>
+
+<h2 id="electrics">Electrics</h2>
+
+<p>As backlight I used a RGB-LED strip with 60 LEDs/m from ebay. They can be cut every few centimeters and have a self-adhesive background. If you chose a form with less curves you avoid a few cuts from the strip, which is not bendable.</p>
+
+<p><img src="/assets/2014-09-27/backside.jpg" alt="" /></p>
+
+<p>I currently use the provided controller and remote, which has limited functions but enough for daily usage. Someday I’ll replace the controller with ip capability.</p>
 </div>
         <div class="post-footer">
         	<span class="date">
-        		<i class="fa fa-clock-o"></i> 25/09/2015
+        		<i class="fa fa-clock-o"></i> 27/09/2014
         	</span>
-            <span class="comments"><a href=/2015/09/25/ansible-docker-error.html#disqus_thread>0 Comments</a></span>
+            <span class="comments"><a href=/2014/09/27/led-wall-light.html#disqus_thread>0 Comments</a></span>
         	<span class="tags">
                 <i class="fa fa-tags"></i>
             	
-            		<a class="tag" href="/tags.html#docker">docker</a>
+            		<a class="tag" href="/tags.html#diy">diy</a>
             	
-            		<a class="tag" href="/tags.html#ansible">ansible</a>
+            		<a class="tag" href="/tags.html#led">led</a>
+            	
+            		<a class="tag" href="/tags.html#interior">interior</a>
             	
         	</span>
         </div>
@@ -80,7 +104,7 @@
                 /* * * CONFIGURATION VARIABLES * * */
                 // Required: on line below, replace text in quotes with your forum shortname
                 var disqus_shortname = 'loopylab';
-                var disqus_identifier= '/2015/09/25/ansible-docker-error';
+                var disqus_identifier= '/2014/09/27/led-wall-light';
                 
                 /* * * DON'T EDIT BELOW THIS LINE * * */
                 (function() {

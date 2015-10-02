@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>Ansible Docker - Docker API Error</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/syntax.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+    <h1 id="pagetitle">
+    	<a href="/"}>
+    		loopylab
+    	</a>
+    </h1>
+
+    <div class="nav">
+        <ul>
+            <a href="/"><li>Home</li></a>
+            <a href="/projects.html"><li>Projects</li></a>
+            <a href="/about.html"><li>About Me</li></a>
+            <a href="/archive.html"><li>Archive</li></a>
+        </ul>
+    </div>
+</header>
+
+        <div class="content">
+            
+    
+    
+
+
+<div class="post">
+    <h1 class="post-heading">
+        <a href=/2015/09/25/ansible-docker-error.html>Ansible Docker - Docker API Error</a>
+    </h1>
+    <div class="post-content"><p>If you try to run a playbook with the ansible-docker plugin, and you get an error like this</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> failed: <span class="o">[</span>192.168.2.xxx<span class="o">]</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;changed&quot;</span>: <span class="nb">false</span>, <span class="s2">&quot;failed&quot;</span>: <span class="nb">true</span><span class="o">}</span>
+<span class="lineno">2</span> msg: Docker API Error: client and server don<span class="err">&#39;</span>t have same version <span class="o">(</span>client : 1.19, server: 1.18<span class="o">)</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> FATAL: all hosts have already failed -- aborting</code></pre></div>
+
+<h1 id="solution">Solution</h1>
+
+<p>You can set the api version to a fixed version. The better way is to use the “auto” feature from docker-py:</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="lineno">1</span> <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">start ....</span>
+<span class="lineno">2</span>     <span class="l-Scalar-Plain">docker</span><span class="p-Indicator">:</span>
+<span class="lineno">3</span>       <span class="l-Scalar-Plain">docker_api_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">auto</span>
+<span class="lineno">4</span>       <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">....</span></code></pre></div>
+</div>
+        <div class="post-footer">
+        	<span class="date">
+        		<i class="fa fa-clock-o"></i> 25/09/2015
+        	</span>
+            <span class="comments"><a href=/2015/09/25/ansible-docker-error.html#disqus_thread>0 Comments</a></span>
+        	<span class="tags">
+                <i class="fa fa-tags"></i>
+            	
+            		<a class="tag" href="/tags.html#docker">docker</a>
+            	
+            		<a class="tag" href="/tags.html#ansible">ansible</a>
+            	
+        	</span>
+        </div>
+    </div>
+   
+
+        </div>
+        <div class="comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                // Required: on line below, replace text in quotes with your forum shortname
+                var disqus_shortname = 'loopylab';
+                var disqus_identifier= '/2015/09/25/ansible-docker-error';
+                
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>            
+        </div>
+   </div>
+
+    <div class="footer">
+	<a href="imprint.html">Impressum & Datenschutz</a>
+</div>
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'loopylab';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>
+</html>

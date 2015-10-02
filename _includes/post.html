@@ -1,0 +1,27 @@
+{% if post %}
+    {% assign var = post %}
+    {% assign tmp_content = post.content %}
+{% else %}
+    {% assign var = include.v_post %}
+    {% assign tmp_content = include.v_content %}
+{% endif %}
+
+<div class="post">
+    <h1 class="post-heading">
+        <a href={{ var.url }}>{{ var.title }}</a>
+    </h1>
+    <div class="post-content">{{ tmp_content }}</div>
+        <div class="post-footer">
+        	<span class="date">
+        		<i class="fa fa-clock-o"></i> {{ var.date | date: '%d/%m/%Y'}}
+        	</span>
+            <span class="comments"><a href={{var.url}}#disqus_thread>0 Comments</a></span>
+        	<span class="tags">
+                <i class="fa fa-tags"></i>
+            	{% for tag in var.tags %}
+            		<a class="tag" href="/tags.html#{{tag}}">{{ tag }}</a>
+            	{% endfor %}
+        	</span>
+        </div>
+    </div>
+   

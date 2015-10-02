@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Wallpoet);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+html {
+  height: 100%; }
+
+a {
+  color: #11a0be; }
+
+body {
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0 auto;
+  color: #333;
+  font-family: 'Droid Sans', sans-serif;
+  height: 100%; }
+
+header {
+  margin-bottom: 40px; }
+  header a {
+    text-decoration: none; }
+  header h1 {
+    font-size: 3rem;
+    font-family: 'Wallpoet',cursive;
+    font-weight: normal;
+    padding: 1rem 0;
+    margin: 0; }
+  header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0; }
+  header ul a {
+    padding: 1em 0;
+    flex-grow: 1;
+    text-align: center;
+    border: solid 1px #D1D1D1;
+    border-left: none;
+    transition: box-shadow .2s ease; }
+  header ul a:first-child {
+    border-left: solid 1px #D1D1D1; }
+  header ul a:hover {
+    box-shadow: inset 0 -5px #11a0be; }
+  header .nav a {
+    color: #333; }
+  @media (max-width: 400px) {
+    header ul {
+      flex-flow: row wrap; }
+    header ul a {
+      flex: 1 100%;
+      border-top: none; }
+    header ul a:first-child {
+      border-top: solid 1px #D1D1D1; } }
+
+.wrapper {
+  min-height: calc(100% - 20px); }
+
+.post {
+  border: 1px solid #D1D1D1;
+  background-color: #F5F5F5;
+  margin-bottom: 40px; }
+  .post .post-heading {
+    display: inline;
+    position: relative;
+    top: -18px;
+    left: 50px;
+    background-color: white;
+    border: solid 1px #D1D1D1;
+    padding: 0 8px;
+    white-space: nowrap; }
+    .post .post-heading a {
+      color: #333;
+      text-decoration: none; }
+  .post .post-content {
+    margin-top: -18px;
+    padding-left: 10px; }
+  .post .highlight pre {
+    overflow: auto; }
+  .post .post-footer {
+    border-top: solid 1px #D1D1D1;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px; }
+    .post .post-footer span {
+      flex: 1 30%; }
+    .post .post-footer .comments {
+      text-align: center; }
+    .post .post-footer .tags {
+      text-align: right; }
+  @media (max-width: 400px) {
+    .post .post-heading {
+      display: block;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      border: none;
+      padding: 0 8px;
+      white-space: normal; } }
+
+.pagination {
+  text-align: center; }
+
+.footer {
+  border: solid 1px #D1D1D1;
+  background-color: #F5F5F5;
+  text-align: center;
+  height: 20px;
+  margin-top: 10px; }

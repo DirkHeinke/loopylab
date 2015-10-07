@@ -8,7 +8,7 @@ title: Projects
 * [overlayr](http://overlayr.net/) - Twitch overlay
 * [DevWars](http://devwars.tv/)
 * [podcatcher.de](http://podcatcher.de/) - An online podcatcher
-* [c]loudguidance](https://cloudguidance.wordpress.com/) - A blog with cloud tutorials
+* [cloudguidance](https://cloudguidance.wordpress.com/) - A blog with cloud tutorials
 
 ## DIY
 * [LED Wall Light](/2014/09/27/led-wall-light.html)

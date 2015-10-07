@@ -1,3 +1,4 @@
+url: "http://loopylab.de"
 paginate: 5
 kramdown:
   input: GFM

@@ -16,7 +16,6 @@ before_deploy:
     - openssl aes-256-cbc -K $encrypted_9c13d015c4ac_key -iv $encrypted_9c13d015c4ac_iv -in .travis/travis_loopylab_key.enc -out /tmp/travis_loopylab_key -d
     - chmod 600 /tmp/travis_loopylab_key
     - ssh-add /tmp/travis_loopylab_key
-    - ls -la
 
 deploy:
     skip_cleanup: true

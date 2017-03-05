@@ -9,6 +9,7 @@ script:
     -  docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V
 
 before_deploy:
+    - eval "$(ssh-agent -s)"
     - echo ${SSH_KEY} > /tmp/ssh_key
     - ssh-add /tmp/ssh_key
 

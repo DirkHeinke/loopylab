@@ -1,0 +1,9 @@
+sudo: require
+
+services:
+    - docker
+
+language: bash
+
+before_install:
+    -  docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V

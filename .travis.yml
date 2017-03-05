@@ -5,6 +5,9 @@ services:
 
 language: bash
 
+addons:
+    ssh_known_hosts: dirkheinke.de
+
 script:
     -  docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V
 

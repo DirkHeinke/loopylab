@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scp -r _site/* dirkheinke.de:/data/web/de.loopylab/
+scp -r _site/* dirk@dirkheinke.de:/data/web/de.loopylab/

@@ -5,5 +5,16 @@ services:
 
 language: bash
 
-before_install:
+script:
     -  docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V
+
+before_deploy:
+    - echo ${SSH_KEY} > /tmp/ssh_key
+    - ssh-add /tmp/ssh_key
+
+deploy:
+    skip_cleanup: true
+    provider: script
+    script: _deploy.sh
+    on:
+        branch: master

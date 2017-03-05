@@ -21,6 +21,6 @@ before_deploy:
 deploy:
     skip_cleanup: true
     provider: script
-    script: scp -r _site/* dirk@dirkheinke.de:/data/web/de.loopylab/
+    script: _deploy.sh
     on:
         branch: master

@@ -21,6 +21,6 @@ before_deploy:
 deploy:
     skip_cleanup: true
     provider: script
-    script: _deploy.sh
+    script: ./_deploy.sh
     on:
         branch: master

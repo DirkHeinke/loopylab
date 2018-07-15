@@ -5,17 +5,17 @@ sitemap: false
 ---
 
 ## Impressum
-Dirk Heinke 
-Bertolt-Brecht-Straße 9 
-98693 Ilmenau 
-Kontakt 
-E-Mail:	dirkheinke+hp@gmail.com
+Dirk Heinke  
+Lindenberg 22  
+98693 Ilmenau  
+Kontakt  
+E-Mail:	dirkheinke+hp@gmail.com  
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-Dirk Heinke 
-Bertolt-Brecht-Straße 9 
-98693 Ilmenau 
+Dirk Heinke  
+Lindenberg 22  
+98693 Ilmenau   
 
 ## Disclaimer
 

@@ -9,7 +9,6 @@ addons:
     ssh_known_hosts: dirkheinke.de
 
 script:
-    - ls -lah
     - docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll /bin/bash -c "chmod a+wx . && jekyll build -V"
 
 before_deploy:

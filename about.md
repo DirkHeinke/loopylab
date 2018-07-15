@@ -1,9 +1,9 @@
 ---
-layout: page
 title: About Me
+layout: page
 ---
 
-I'm a student at TU Ilmenau, studying computer engineering.
+Former student at TU Ilmenau of computer engineering.
 
 On this page I write about various things I'm interested in. 
 

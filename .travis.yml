@@ -9,7 +9,8 @@ addons:
     ssh_known_hosts: dirkheinke.de
 
 script:
-    -  docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V
+    - ls -lah
+    - docker run --rm -u=$UID --volume=$(pwd):/srv/jekyll jekyll/jekyll jekyll build -V
 
 before_deploy:
     - eval "$(ssh-agent -s)"

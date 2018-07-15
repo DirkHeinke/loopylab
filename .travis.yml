@@ -10,7 +10,7 @@ addons:
 
 script:
     - ls -lah
-    - docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll /bin/bash -c "ls -lah && chmod a+x . && jekyll build -V"
+    - docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll /bin/bash -c "chmod a+wx . && jekyll build -V"
 
 before_deploy:
     - eval "$(ssh-agent -s)"

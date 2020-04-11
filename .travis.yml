@@ -12,8 +12,8 @@ script:
 before_deploy:
     - eval "$(ssh-agent -s)"
     - openssl aes-256-cbc -K $encrypted_496074b8526a_key -iv $encrypted_496074b8526a_iv -in .travis/travis_uploader_key.enc -out /tmp/travis_uploader_key -d
-    - chmod 600 /tmp/travis_loopylab_key
-    - ssh-add /tmp/travis_loopylab_key
+    - chmod 600 /tmp/travis_uploader_key
+    - ssh-add /tmp/travis_uploader_key
 
 deploy:
     skip_cleanup: true

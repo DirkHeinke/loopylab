@@ -1,25 +1,24 @@
-sudo: require
-
 services:
     - docker
 
-language: bash
+language: shell
 
 addons:
-    ssh_known_hosts: dirkheinke.de
+    ssh_known_hosts: loopylab.de
 
 script:
     - docker run --rm --volume=$(pwd):/srv/jekyll jekyll/jekyll /bin/bash -c "chmod a+wx . && jekyll build -V"
 
 before_deploy:
     - eval "$(ssh-agent -s)"
-    - openssl aes-256-cbc -K $encrypted_9c13d015c4ac_key -iv $encrypted_9c13d015c4ac_iv -in .travis/travis_loopylab_key.enc -out /tmp/travis_loopylab_key -d
+    - openssl aes-256-cbc -K $encrypted_9c13d015c4ac_key -iv $encrypted_9c13d015c4ac_iv -in .travis/travis_uploader_key.enc -out /tmp/travis_loopylab_key -d
     - chmod 600 /tmp/travis_loopylab_key
     - ssh-add /tmp/travis_loopylab_key
 
 deploy:
     skip_cleanup: true
     provider: script
-    script: ./_deploy.sh
+    script:
+        - sftp uploader@dirkheinke.de:content/loopylab.de <<< $'put -R _site/*'
     on:
         branch: master

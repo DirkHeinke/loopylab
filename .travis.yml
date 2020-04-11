@@ -18,7 +18,6 @@ before_deploy:
 deploy:
     skip_cleanup: true
     provider: script
-    script:
-        - sftp uploader@dirkheinke.de:content/loopylab.de <<< $'put -R _site/*'
+    script: sftp uploader@dirkheinke.de:content/loopylab.de <<< $'put -R _site/*'
     on:
         branch: master
